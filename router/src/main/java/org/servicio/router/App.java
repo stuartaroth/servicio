@@ -1,7 +1,7 @@
-package org.servicio.socket;
+package org.servicio.router;
 
-import org.servicio.socket.config.ConfigService;
-import org.servicio.socket.config.ConfigServiceFactory;
+import org.servicio.router.config.ConfigService;
+import org.servicio.router.config.ConfigServiceFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -9,9 +9,9 @@ public class App {
     private static Logger logger = LoggerFactory.getLogger(App.class);
 
     public static void main(String[] args) throws Exception {
-        logger.info("starting socket...");
+        logger.info("starting router...");
         ConfigService configService = ConfigServiceFactory.getConfigService();
-        SocketServer socketServer = new SocketServer(configService);
-        socketServer.start();
+        RouterWorker routerWorker = new RouterWorker(configService);
+        routerWorker.start();
     }
 }
