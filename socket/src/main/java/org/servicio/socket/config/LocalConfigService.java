@@ -8,9 +8,6 @@ public class LocalConfigService implements ConfigService {
     private String host;
     private String username;
     private String password;
-    private String exchangeFromSocket;
-    private String exchangeToSocket;
-
 
     public LocalConfigService() {
         socketPort = 8888;
@@ -18,8 +15,6 @@ public class LocalConfigService implements ConfigService {
         host = "localhost";
         username = "guest";
         password = "guest";
-        exchangeFromSocket = "messages-from-socket";
-        exchangeToSocket = "messages-to-socket";
     }
 
     @Override
@@ -45,15 +40,5 @@ public class LocalConfigService implements ConfigService {
     @Override
     public String getPassword() {
         return password;
-    }
-
-    @Override
-    public String getExchangeFromSocket() {
-        return exchangeFromSocket;
-    }
-
-    @Override
-    public String getExchangeToSocket() {
-        return exchangeToSocket;
     }
 }

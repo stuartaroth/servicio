@@ -8,6 +8,4 @@ public interface ConfigService {
     String getHost();
     String getUsername();
     String getPassword();
-    String getExchangeFromSocket();
-    String getExchangeToSocket();
 }
