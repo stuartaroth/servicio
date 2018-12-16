@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "title": "message",
+  "type": "object",
+  "properties": {
+    "messageType": {
+      "type": "string",
+      "description": "The messageType key that will be handled"
+    },
+    "queueName": {
+      "type": "string",
+      "description": "The name of the queue where the messageType should be routed."
+    }
+  },
+  "required": [
+    "messageType",
+    "queueName"
+  ]
+}

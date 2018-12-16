@@ -126,7 +126,7 @@ public class SocketServer extends WebSocketServer {
         // messages-for-socket
         channel.exchangeDeclare(MESSAGES_FOR_SOCKET_EXCHANGE, FANOUT);
         String messagesForSocketQueue = channel.queueDeclare().getQueue();
-        channel.queueBind(messagesForSocketQueue, MESSAGES_FOR_SOCKET_EXCHANGE, MESSAGE_FOR_SOCKET_ROUTING_KEY);
+        channel.queueBind(messagesForSocketQueue, MESSAGES_FOR_SOCKET_EXCHANGE, EMPTY_ROUTING_KEY);
         channel.basicConsume(messagesForSocketQueue, true, (consumerTag, delivery) -> {
             try {
                 String message = new String(delivery.getBody(), StandardCharsets.UTF_8);

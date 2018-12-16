@@ -12,6 +12,5 @@ public class App {
         logger.info("starting router...");
         ConfigService configService = ConfigServiceFactory.getConfigService();
         RouterWorker routerWorker = new RouterWorker(configService);
-        routerWorker.start();
     }
 }
